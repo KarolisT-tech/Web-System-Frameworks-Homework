@@ -19,4 +19,9 @@ return [
     'address' => 'Adresas',
     'allConferences' => 'Visos Konferencijos',
     'conferencer' => 'CONFERENCER',
+    'participants' => 'Dalyviai',
+    'view' => 'Peržiūrėti',
+    'deleteconf' => 'Ištrinti pasirinktą konferenciją?',
+    'yes' => 'Taip',
+    'no' => 'Ne',
 ];

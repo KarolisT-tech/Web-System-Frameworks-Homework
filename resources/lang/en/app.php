@@ -19,4 +19,9 @@ return [
     'address' => 'Address',
     'allConferences' => 'All Conferences',
     'conferencer' => 'CONFERENCER',
+    'participants' => 'Participants',
+    'view' => 'View',
+    'deleteconf' => 'Delete this conference?',
+    'yes' => 'Yes',
+    'no' => 'No',
 ];

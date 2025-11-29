@@ -26,6 +26,7 @@ class StoreConferenceRequest extends FormRequest
             'description' => 'required|min:5|max:100',
             'date' => 'required|date',
             'address' => 'required|min:5|max:50',
+            'participants' => 'required|integer|min:1',
         ];
     }
 }

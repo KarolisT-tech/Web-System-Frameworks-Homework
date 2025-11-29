@@ -14,4 +14,4 @@ Route::get('/conferences', [ConferenceController::class, 'showAllConferences'])-
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::resource('conferences', ConferenceController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);
+Route::resource('conferences', ConferenceController::class)->only(['create', 'store', 'edit', 'update', 'destroy', 'show']);

@@ -11,6 +11,7 @@ class Conference extends Model
         'description',
         'date',
         'address',
+        'participants',
     ];
 
 }

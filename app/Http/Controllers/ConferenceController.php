@@ -40,4 +40,9 @@ class ConferenceController extends Controller
         $conference->delete();
         return redirect()->route('conferences.showAllConferences');
     }
+
+    public function show($id){
+        $conference = Conference::findOrFail($id);
+        return view('conferences.show', compact('conference'));
+    }
 }

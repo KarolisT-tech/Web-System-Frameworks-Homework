@@ -30,3 +30,11 @@
     <p>{{$message}}</p>
     @enderror
 </div>
+<div class="mb-3">
+    <label for="participant-input" class="form-label m-1 fw-bold">{{__('app.participants')}}</label>
+    <input type="text" id="participant-input" name="participants" value="{{old('participants', optional($conference ?? null)->participants)}}"
+           class="form-control @error('participants') is-invalid @enderror m-1">
+    @error('participants')
+    <p>{{$message}}</p>
+    @enderror
+</div>
