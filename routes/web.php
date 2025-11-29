@@ -5,11 +5,13 @@ use App\Http\Controllers\ConferenceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('auth.login');
+    if(auth()->check()){
+        return redirect('/conferences');
+    }
+    return redirect('/login');
 });
-
-Route::get('/conferences', [ConferenceController::class, 'showAllConferences'])->middleware('auth')->name('conferences.showAllConferences');
-
-Route::get('login', [authController::class, 'showLoginForm'])->name('login.form');
-Route::post('login', [authController::class, 'login'])->name('login');
-Route::post('logout', [authController::class, 'logout'])->name('logout');
+Route::get('/conferences', [ConferenceController::class, 'showAllConferences'])->name('conferences.showAllConferences');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::resource('conferences', ConferenceController::class)->only(['create', 'store', 'edit', 'update', 'destroy']);

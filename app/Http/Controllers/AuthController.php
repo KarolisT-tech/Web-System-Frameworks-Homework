@@ -26,14 +26,9 @@ class AuthController extends Controller
         // Try to authenticate user
         if (Auth::attempt($credentials)) {
 
-            // Protect against session fixation
             $request->session()->regenerate();
-
-            // Redirect to conference list
             return redirect()->intended('/conferences');
         }
-
-        // Auth failed → send error back to form
         return back()->withErrors([
             'email' => 'Incorrect email or password.',
         ])->withInput();

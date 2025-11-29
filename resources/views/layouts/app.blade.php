@@ -8,6 +8,21 @@
     <title>@yield("title")</title>
 </head>
 <body>
+    @if(!request()->is('login'))
+        <nav style="padding-bottom: 10px;">
+
+        @auth
+            <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                @csrf
+                <button type="submit">{{__('app.logout')}}</button>
+            </form>
+        @endauth
+
+        @guest
+            <a href="/login">{{__('app.login')}}</a>
+        @endguest
+    </nav>
+    @endif
     @yield("content")
 </body>
 </html>
