@@ -9,20 +9,26 @@
 </head>
 <body>
     @if(!request()->is('login'))
-        <nav style="padding-bottom: 10px;">
+        <nav class="border-bottom pb-1 mb-2">
 
-        @auth
-            <form action="{{ route('logout') }}" method="POST" style="display:inline;">
-                @csrf
-                <button type="submit">{{__('app.logout')}}</button>
-            </form>
-        @endauth
+            <a href="/conferences" class="btn btn-secondary m-1">{{__('app.allConferences')}}</a>
+            @auth
+                <form action="{{ route('logout') }}" method="POST" style="display:inline;">
+                    @csrf
+                    <button type="submit" class="btn btn-danger m-1">{{__('app.logout')}}</button>
+                </form>
+            @endauth
+            @guest
+                <a href="/login" class="btn btn-success m-1">{{__('app.login')}}</a>
+            @endguest
 
-        @guest
-            <a href="/login">{{__('app.login')}}</a>
-        @endguest
     </nav>
     @endif
-    @yield("content")
+    <div class="container py-4">
+        <div class="content-wrapper mx-auto">
+            @yield("content")
+        </div>
+    </div>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </body>
 </html>

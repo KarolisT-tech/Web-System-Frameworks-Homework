@@ -7,6 +7,6 @@
         @csrf
         @method('PUT')
         @include('partials.form')
-        <div><input type="submit" value="{{__('app.update')}}"></div>
+        <div><input type="submit" value="{{__('app.update')}}" class="btn btn-success m-2"></div>
     </form>
 @endsection

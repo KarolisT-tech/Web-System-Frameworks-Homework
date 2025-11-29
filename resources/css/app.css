@@ -1,4 +1,5 @@
-@import 'tailwindcss';
+/*@import 'tailwindcss';*/
+@import "bootstrap/dist/css/bootstrap.min.css";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -8,4 +9,22 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.form-control {
+    background-color: #f3f3f3;
+}
+
+body {
+    background-image: url('/public/images/background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
 }

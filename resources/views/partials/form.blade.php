@@ -1,27 +1,31 @@
-<div>
-    <label for="title-input">{{__('app.title')}}</label>
-    <input type="text" id="title-input" name="title" value="{{old('title', optional($conference ?? null)->title)}}">
+<div class="mb-3">
+    <label for="title-input" class="form-label m-1 fw-bold">{{__('app.title')}}</label>
+    <input type="text" id="title-input" name="title" value="{{old('title', optional($conference ?? null)->title)}}"
+           class="form-control @error('title') is-invalid @enderror m-1">
     @error('title')
         <p>{{$message}}</p>
     @enderror
 </div>
-<div>
-    <label for="description-input">{{__('app.description')}}</label>
-    <textarea id="description-input" name="description">{{old('description', optional($conference ?? null)->description)}}</textarea>
+<div class="mb-3">
+    <label for="description-input" class="form-label m-1 fw-bold">{{__('app.description')}}</label>
+    <textarea id="description-input" name="description" class="form-control @error('description') is-invalid @enderror m-1">
+              {{old('description', optional($conference ?? null)->description)}}</textarea>
     @error('description')
     <p>{{$message}}</p>
     @enderror
 </div>
-<div>
-    <label for="date-input">{{__('app.date')}}</label>
-    <input type="date" id="date-input" name="date" value="{{old('date', optional($conference ?? null)->date)}}">
+<div class="mb-3">
+    <label for="date-input" class="form-label m-1 fw-bold">{{__('app.date')}}</label>
+    <input type="date" id="date-input" name="date" value="{{old('date', optional($conference ?? null)->date)}}"
+           class="form-control @error('description') is-invalid @enderror m-1">
     @error('date')
     <p>{{$message}}</p>
     @enderror
 </div>
-<div>
-    <label for="address-input">{{__('app.address')}}</label>
-    <input type="text" id="address-input" name="address" value="{{old('address', optional($conference ?? null)->address)}}">
+<div class="mb-3">
+    <label for="address-input" class="form-label m-1 fw-bold">{{__('app.address')}}</label>
+    <input type="text" id="address-input" name="address" value="{{old('address', optional($conference ?? null)->address)}}"
+           class="form-control @error('description') is-invalid @enderror m-1">
     @error('address')
     <p>{{$message}}</p>
     @enderror

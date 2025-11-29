@@ -17,4 +17,6 @@ return [
     'description' => 'Description',
     'date' => 'Date',
     'address' => 'Address',
+    'allConferences' => 'All Conferences',
+    'conferencer' => 'CONFERENCER',
 ];

@@ -17,4 +17,6 @@ return [
     'description' => 'Aprašymas',
     'date' => 'Data',
     'address' => 'Adresas',
+    'allConferences' => 'Visos Konferencijos',
+    'conferencer' => 'CONFERENCER',
 ];
